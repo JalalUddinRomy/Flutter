@@ -1,4 +1,4 @@
-void anynMethod(){
+void anyMethod(){
   print('New A');
   Future.delayed(Duration(seconds:  4)).then((_){
     print("New B");// ei line print korar Jonno 4 sec time nibe.
@@ -10,7 +10,7 @@ Future<int> sum(int a,int b) async{
   return a+b;
 }
 Future<void> main() async {
-  anynMethod();
+  anyMethod();
   int result= await sum(8, 9);
   print(result);
 
