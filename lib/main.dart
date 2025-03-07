@@ -25,6 +25,7 @@ class Homeactivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: AppBody(),
       appBar: AppBar(
         title: Text("First app"),
         centerTitle: true,
@@ -81,8 +82,14 @@ class Homeactivity extends StatelessWidget {
 
               child: UserAccountsDrawerHeader(
                 decoration: BoxDecoration(color: Colors.amber),
-                accountName: Text("Md Jalal Uddin",style: TextStyle(color: Colors.black),),
-                accountEmail: Text('Jalal@gmail.com',style: TextStyle(color: Colors.black)),
+                accountName: Text(
+                  "Md Jalal Uddin",
+                  style: TextStyle(color: Colors.black),
+                ),
+                accountEmail: Text(
+                  'Jalal@gmail.com',
+                  style: TextStyle(color: Colors.black),
+                ),
                 currentAccountPicture: Image.network(""),
               ),
             ),
@@ -108,6 +115,27 @@ class Homeactivity extends StatelessWidget {
               },
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class AppBody extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        "This is for first Time I am using this Apps please give me a better experience with better service",
+        textAlign: TextAlign.justify,
+        maxLines: 2,
+        style: TextStyle(
+          color: Colors.brown,
+          wordSpacing: 1,
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 1,
+          overflow: TextOverflow.ellipsis,
         ),
       ),
     );
