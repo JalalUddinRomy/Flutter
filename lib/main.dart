@@ -90,7 +90,10 @@ class Homeactivity extends StatelessWidget {
                   'Jalal@gmail.com',
                   style: TextStyle(color: Colors.black),
                 ),
-                currentAccountPicture: Image.network(""),
+                currentAccountPicture: ClipOval(
+                  child: Image.asset("assets/images/ajrin.jpeg",
+                  fit: BoxFit.cover),
+                ),
               ),
             ),
             ListTile(
@@ -122,20 +125,31 @@ class Homeactivity extends StatelessWidget {
 }
 
 class AppBody extends StatelessWidget {
+  bodySnackBar(Message, context) {
+    return ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(Message)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(
-        "This is for first Time I am using this Apps please give me a better experience with better service",
-        textAlign: TextAlign.justify,
-        maxLines: 2,
-        style: TextStyle(
-          color: Colors.brown,
-          wordSpacing: 1,
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 1,
-          overflow: TextOverflow.ellipsis,
+      child: InkWell(
+        onTap: () {
+          bodySnackBar("Tap the text", context);
+        },
+        child: Text(
+          "This is for first Time I am using this Apps please give me a better experience with better service",
+          textAlign: TextAlign.justify,
+          maxLines: 2,
+          style: TextStyle(
+            color: Colors.brown,
+            wordSpacing: 1,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
       ),
     );
