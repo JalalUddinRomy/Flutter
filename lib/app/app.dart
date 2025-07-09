@@ -5,6 +5,7 @@ import 'package:ecommerceapp/features/auth/Ui/screens/email_verification_screen.
 import 'package:ecommerceapp/features/auth/Ui/screens/pin_verfication_screen.dart';
 import 'package:ecommerceapp/features/auth/Ui/screens/splesh_screen.dart';
 import 'package:ecommerceapp/features/common/ui/screens/main_bottom_nav_screen.dart';
+import 'package:ecommerceapp/features/products/ui/screens/products_item_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,12 +20,26 @@ class CraftyBay extends StatelessWidget {
       themeMode: ThemeMode.light,
       initialRoute: '/',
       initialBinding: ControllerBinders(),
-      routes: {
-        '/':(context)=>SpleshScreen(),
-        EmailVerificationScreen.name:(context)=>const EmailVerificationScreen(),
-        PinVerificationScreen.name:(context)=>const PinVerificationScreen(),
-        CompleteProfileScreen.name:(context)=>const CompleteProfileScreen(),
-        MainBottomNavScreen.name:(context)=>const MainBottomNavScreen()
+      onGenerateRoute: (RouteSettings setting){
+        late Widget widget;
+        if(setting.name==SpleshScreen.name){
+          widget=SpleshScreen();
+        }else if(setting.name==EmailVerificationScreen.name){
+          widget =EmailVerificationScreen();
+        }
+        else if(setting.name==PinVerificationScreen.name){
+          widget =PinVerificationScreen();
+        }else if(setting.name==CompleteProfileScreen.name){
+          widget =CompleteProfileScreen();
+        }else if(setting.name==MainBottomNavScreen.name){
+          widget =MainBottomNavScreen();
+        }else if(setting.name==ProductsItemScreen.name){
+          String name=setting.arguments as String;
+          widget =ProductsItemScreen(CategoryTitle: name,);
+        }
+        return MaterialPageRoute(builder: (context){
+          return widget;
+        });
       },
     );
   }

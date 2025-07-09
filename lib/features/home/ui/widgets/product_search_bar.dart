@@ -16,6 +16,7 @@ class ProductSearchBar extends StatelessWidget {
         hintText: 'Search',
         prefixIcon: Icon(Icons.search,color: Colors.black26,),
         focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
+        border: OutlineInputBorder(borderSide: BorderSide.none),
         enabledBorder: OutlineInputBorder(borderSide: BorderSide.none),
       ),
     );

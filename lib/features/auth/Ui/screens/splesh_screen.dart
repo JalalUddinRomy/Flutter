@@ -4,6 +4,7 @@ import '../widgets/app_icon_widget.dart';
 
 class SpleshScreen extends StatefulWidget {
   const SpleshScreen({super.key});
+  static String name='/';
 
   @override
   State<SpleshScreen> createState() => _SpleshScreenState();

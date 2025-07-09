@@ -15,7 +15,7 @@ class HomeCarouselSlider extends StatelessWidget {
       children: [
         CarouselSlider(
           options: CarouselOptions(height: 200.0,
-              viewportFraction: 0.98,
+              viewportFraction: 1,
               onPageChanged: (currentIndex, reason) {
                 _selectedIndex.value = currentIndex;
               }),
@@ -30,9 +30,10 @@ class HomeCarouselSlider extends StatelessWidget {
                     margin: EdgeInsets.symmetric(horizontal: 2.0),
                     decoration: BoxDecoration(
                         color: AppColor.themeColor,
-                        borderRadius: BorderRadius.circular(4)
+                        borderRadius: BorderRadius.circular(4),
                     ),
-                    child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+                    alignment: Alignment.center,
+                    child: Text('text $i', style: TextStyle(fontSize: 16.0,),)
                 );
               },
             );
